@@ -21,7 +21,6 @@ $fabricmaxwidth,$fabricmaxheight = 0
 $postareaCounts = @{}
 
 ForEach ($row in (Get-Content C:\gitstuff\AdventOfCode2018-PS\input-3.txt)) { 
-    If (!([string]$row -match [regex]::new($regexfilter))) { Throw "Error while applying regex" }
     $claim = [claim]::New($matches.ID,$matches.leftInd,$matches.topInd,$matches.Width,$matches.Height)
     $tempmaxwidth = $claim.leftInd + $claim.Width
     $tempmaxheight = $claim.topInd + $claim.Height
